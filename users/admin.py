@@ -9,7 +9,7 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = ( # This organizes how user details are displayed when editing an existing user, grouped into three sections:
         (None, {'fields': ('email', 'username', 'password')}),
         ('Permissions', {'fields': ('is_staff', 'is_active', 'is_verified')}),
-        ('Important dates', {'fields': ('last_login', 'created_at', 'updated_at')}),
+        ('Important dates', {'fields': ('last_login',)}),
     )
     add_fieldsets = ( # This defines which fields appear when creating a new user in the admin interface.
         (None, {
