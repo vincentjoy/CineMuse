@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
         read_only_fields = ('is_verified',)
 
     def create(self, validated_data):
-        user = User.objects.create_user(
+        user = User.objects.create_user( # create_user is used instead of create to properly hash the password
             email=validated_data['email'],
             username=validated_data['username'],
             password=validated_data['password']
